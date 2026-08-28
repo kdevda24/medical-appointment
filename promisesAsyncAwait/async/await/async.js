@@ -119,8 +119,7 @@ something2();
 
 
 
-"https://dummyjson.com/products"
-"https://dummyjson.com/products"
+
 
 
 
@@ -152,3 +151,47 @@ const result = async () => {
 result();
 
 
+//Task
+
+const getWeather = async (city) => {
+    // delay
+    // return weather
+    return new Promise ((resolve,reject) => {
+        setTimeout (() => {
+            if (city === "jersey")
+            resolve("The weather is bad...")
+        else {
+            reject(new Error ("the weather is good..."))
+        }
+        },1000)
+    })
+};
+
+const getCurrency = async (code) => {
+    // delay
+    // return currency
+    return new Promise ((resolve,reject) => {
+        setTimeout (() => {
+            if (code === 20)
+            resolve("The currency rates are high.")
+        else {
+            reject(new Error ("The rates are low"))
+        }
+        },1000)
+    })
+};
+
+const combineResults = async () => {
+    const results = await Promise.all([
+        // getWeather(...)
+        // getCurrency(...)
+        getWeather("jersey"),
+        getCurrency(20)
+    ])
+    console.log(results);
+    
+
+    // combine results
+};
+
+combineResults();
