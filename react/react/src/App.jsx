@@ -9,6 +9,9 @@ import AppointmentSubmit from './AppointmentFormSubmit'
 import Example from '../useEffect/Basic'
 import Home from "./Home"
 import About from "./About"
+import AppointmentRow from "./AppointmentRow"
+import AppointmentDetail from "./AppointmentDetail"
+
 
 
 function App() {
@@ -28,16 +31,18 @@ function App() {
       {/* <Example /> */}
 
 
-      <BrowserRouter>
+      
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/appointment">Appointment Form</Link>
+      
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/appointment" element={<AppointmentSubmit/>}/>
+        <Route path="/appointments/:id" element={<AppointmentDetail />}/>
       </Routes>
-      </BrowserRouter>
+      
       
       
     </>

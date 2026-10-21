@@ -1,11 +1,18 @@
-function AppointmentRow({ appointment }) {
-    
+import { Link } from 'react-router-dom';
+
+function AppointmentRow(props) {
+    const { appointment } = props
+
     return (
-        <>
-        <p>{appointment.name} - {appointment.department} - {appointment.status}</p>
-       
-        
-        </>
+        <div>
+            <p>
+                {appointment.name} - {appointment.department} - {appointment.status}
+                <Link to={`/appointments/${appointment.id}`}>View</Link>
+            </p>
+
+
+
+        </div>
     );
 }
 
